@@ -1,8 +1,8 @@
-package 双指针.对撞指针.两数之和;
+package A未完成.双指针;
 
 import java.util.Arrays;
 
-public class 满足条件的子序列数目1498M_幂的溢出范围 {
+public class 满足条件的子序列数目1498H_幂的溢出范围 {
 
     public int numSubseq(int[] nums, int target) {
         Arrays.sort(nums);
@@ -43,7 +43,7 @@ public class 满足条件的子序列数目1498M_幂的溢出范围 {
      * （n个元速，每个元素可有可没有，两种可能)
      */
     public static void main(String[] args) {
-        满足条件的子序列数目1498M_幂的溢出范围 main = new 满足条件的子序列数目1498M_幂的溢出范围();
+        满足条件的子序列数目1498H_幂的溢出范围 main = new 满足条件的子序列数目1498H_幂的溢出范围();
 
         /**
          * 给定数组nums和目标值target，返回子序列中最大值和最小值之和小于等于target的子序列种数
