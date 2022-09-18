@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Cenmo
  * @Date 2022-06-29 2022-06-29
  */
-public class 最接近的三数之和16 {
+public class 最接近的三数之和16M {
 
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
@@ -40,7 +40,7 @@ public class 最接近的三数之和16 {
     }
 
     public static void main(String[] args) {
-        最接近的三数之和16 main = new 最接近的三数之和16();
+        最接近的三数之和16M main = new 最接近的三数之和16M();
 
         System.out.println(main.threeSumClosest(new int[] {-1,2,1,-4},1)); // 2
         System.out.println(main.threeSumClosest(new int[] {0,0,0},1)); // 0

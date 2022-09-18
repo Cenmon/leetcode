@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Cenmo
  * @Date 2022-07-09 2022-07-09
  */
-public class 有效三角形的个数611 {
+public class 有效三角形的个数611M {
 
     private int ANS = 0;
     public int triangleNumber(int[] nums) {
@@ -33,7 +33,7 @@ public class 有效三角形的个数611 {
     }
 
     public static void main(String[] args) {
-        有效三角形的个数611 main = new 有效三角形的个数611();
+        有效三角形的个数611M main = new 有效三角形的个数611M();
 
         System.out.println(main.triangleNumber(new int[]{2,2,3,4})); // 3
         System.out.println(main.triangleNumber(new int[]{4,2,3,4})); // 4

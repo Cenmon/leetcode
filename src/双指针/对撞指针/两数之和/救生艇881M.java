@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Cenmo
  * @Date 2022-07-30 2022-07-30
  */
-public class 救生艇881 {
+public class 救生艇881M {
 
     /**
      * 思想：两数之和小于等于limit的对数，大于limit的自成一队(right>limit)，最后不够分的自成一队(left=right)
@@ -32,7 +32,7 @@ public class 救生艇881 {
     }
 
     public static void main(String[] args) {
-        救生艇881 main = new 救生艇881();
+        救生艇881M main = new 救生艇881M();
 
         /**
          * 给定每个人的体重people[i]以及limit
