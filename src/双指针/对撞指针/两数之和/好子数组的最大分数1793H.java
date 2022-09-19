@@ -3,7 +3,7 @@ package 双指针.对撞指针.两数之和;
 /**
  * @Author Cenmo
  * @Date 2022-09-18 23:04
- * @Description
+ * @Description 求积min*(right-left),保证min不变，穷举min相同时积所有的情况
  */
 public class 好子数组的最大分数1793H {
 
