@@ -22,6 +22,23 @@ public class 计数质数204M {
         return count;
     }
 
+    // 埃氏筛法
+    public int countPrimes2(int n) {
+        int count=0;
+        boolean[] isHeShu = new boolean[n];
+        for(int i=2;i<n;i++){
+            if(!isHeShu[i]){
+                count++;
+                if(i*i < n){ // 筛掉区间[2,sqrt(n)]内质数的倍数
+                    for(int j=2*i;j<n;j+=i){
+                        isHeShu[j] = true;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
 
     public static void main(String[] args) {
         计数质数204M main = new 计数质数204M();
