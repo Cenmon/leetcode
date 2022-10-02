@@ -1,4 +1,4 @@
-package 双指针.模拟.补齐短板;
+package 双指针.模拟.补齐短板_木桶原理;
 
 import java.util.Arrays;
 
@@ -65,10 +65,24 @@ public class 花园最大的总美丽值2234H {
         return low-1>=0?low-1:0;
     }
 
+//    private int func(int[] flowers,int newFlowers,int target,int full,int partial){
+//        int end = flowers.length-1;
+//        long score = 0;
+//        while(flowers[end] >= target) {
+//            score += full;
+//            end--;
+//        }
+//    }
 
     public static void main(String[] args) {
         花园最大的总美丽值2234H main = new 花园最大的总美丽值2234H();
 
+        /**
+         * 给定数组flowers，其中flowers[i]描述各个花园的花朵情况
+         * 规定满足大于等于target朵花的花园美丽值为full，
+         * 未满足target朵花的花园选择花朵数目最少的花朵数*partial即为所有不满足花园的总美丽值
+         * 先给定新花朵数目，给所有花园种花，使得总美丽值最大，并返回最大美丽值
+         */
         System.out.println(main.maximumBeauty(new int[]{1,3,1,1},7,6,12,1)); //14
         System.out.println(main.maximumBeauty(new int[]{2,4,5,3},10,5,2,6)); //30
         System.out.println(main.maximumBeauty(new int[]{18,16,10,10,5},10,3,15,4)); //75

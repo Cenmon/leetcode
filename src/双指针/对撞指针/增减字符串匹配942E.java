@@ -18,6 +18,20 @@ public class 增减字符串匹配942E {
         return ans;
     }
 
+    private int[] func(String s){
+        int n = s.length(),left=0,right=n;
+        int[] ans = new int[n+1];
+        for(int i=0;i<n;i++){
+            if(s.charAt(i) == 'I'){
+                ans[i] = left++;
+            }else if(s.charAt(i) == 'D'){
+                ans[i] = right--;
+            }
+        }
+        ans[n] = left;
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         增减字符串匹配942E main = new 增减字符串匹配942E();
@@ -27,8 +41,12 @@ public class 增减字符串匹配942E {
          * 当s.charAt(i)为I时，ans[i]<ans[i+1],当为D时，ans[i]>ans[i+1]
          */
 
-        ArrayUtils.print(main.diStringMatch("IDID")); // [0,4,1,3,2]
-        ArrayUtils.print(main.diStringMatch("III")); // [0,1,2,3]
-        ArrayUtils.print(main.diStringMatch("DDI")); // [3,2,0,1]
+//        ArrayUtils.print(main.diStringMatch("IDID")); // [0,4,1,3,2]
+//        ArrayUtils.print(main.diStringMatch("III")); // [0,1,2,3]
+//        ArrayUtils.print(main.diStringMatch("DDI")); // [3,2,0,1]
+
+        ArrayUtils.print(main.func("IDID")); // [0,4,1,3,2]
+        ArrayUtils.print(main.func("III")); // [0,1,2,3]
+        ArrayUtils.print(main.func("DDI")); // [3,2,0,1]
     }
 }

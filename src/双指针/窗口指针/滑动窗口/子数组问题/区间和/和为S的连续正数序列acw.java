@@ -1,4 +1,4 @@
-package 双指针.对撞指针.区间和;
+package 双指针.窗口指针.滑动窗口.子数组问题.区间和;
 
 import Utils.ArrayUtils;
 

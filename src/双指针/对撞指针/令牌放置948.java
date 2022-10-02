@@ -26,9 +26,27 @@ public class 令牌放置948 {
                 /**
                  * 分三个区间A,B,C,A区间减能量，B区间不用，C区间加能量
                  */
-                if(left <= right){ // 还有令牌可以上翻
-                    ans--;
-                }
+                if(left > right) break;
+                ans--;// 还有令牌可以上翻
+            }else{
+                break;
+            }
+        }
+        return ans;
+    }
+
+    private int func(int[] tokens,int power){
+        Arrays.sort(tokens);
+        int left=0,right=tokens.length-1;
+        int ans = 0;
+        while(left <= right){
+            if(power >= tokens[left]){
+                power -= tokens[left++];
+                ans++;
+            }else if(ans >= 1){
+                power += tokens[right--];
+                if(left > right) break;
+                ans--;
             }else{
                 break;
             }
@@ -45,9 +63,14 @@ public class 令牌放置948 {
          * 任意顺序确定令牌正反，且不必使用所有令牌，返回最大得分
          */
 
-        System.out.println(main.bagOfTokensScore(new int[]{100},50)); // 0
-        System.out.println(main.bagOfTokensScore(new int[]{100,200},150)); // 1
-        System.out.println(main.bagOfTokensScore(new int[]{100,200,300,400},200)); // 2
-        System.out.println(main.bagOfTokensScore(new int[]{71,55,82},54)); // 0
+//        System.out.println(main.bagOfTokensScore(new int[]{100},50)); // 0
+//        System.out.println(main.bagOfTokensScore(new int[]{100,200},150)); // 1
+//        System.out.println(main.bagOfTokensScore(new int[]{100,200,300,400},200)); // 2
+//        System.out.println(main.bagOfTokensScore(new int[]{71,55,82},54)); // 0
+
+//        System.out.println(main.func(new int[]{100},50)); // 0
+//        System.out.println(main.func(new int[]{100,200},150)); // 1
+//        System.out.println(main.func(new int[]{100,200,300,400},200)); // 2
+//        System.out.println(main.func(new int[]{71,55,82},54)); // 0
     }
 }

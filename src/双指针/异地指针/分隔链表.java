@@ -29,6 +29,26 @@ public class 分隔链表 {
         return less.next;
     }
 
+    private ListNode func(ListNode head,int x){
+        ListNode lessHead = new ListNode(0);
+        ListNode moreHead = new ListNode(0);
+        ListNode less=lessHead,more=moreHead;
+        ListNode p = head;
+        while(p != null){
+            if(p.val < x){
+                less.next = p;
+                less = less.next;
+            }else{
+                more.next = p;
+                more = more.next;
+            }
+            p = p.next;
+        }
+        more.next = null;
+        less.next = moreHead.next;
+        return lessHead.next;
+    }
+
     public static void main(String[] args) {
         分隔链表 main = new 分隔链表();
 
@@ -38,5 +58,9 @@ public class 分隔链表 {
         ListUtils.print(main.partition(ListUtils.create(new int[]{1,4,3,2,5,2}),3));
         ListUtils.print(main.partition(ListUtils.create(new int[]{2,1}),2));
         ListUtils.print(main.partition(ListUtils.create(new int[]{1,1}),2));
+
+        ListUtils.print(main.func(ListUtils.create(new int[]{1,4,3,2,5,2}),3));
+        ListUtils.print(main.func(ListUtils.create(new int[]{2,1}),2));
+        ListUtils.print(main.func(ListUtils.create(new int[]{1,1}),2));
     }
 }

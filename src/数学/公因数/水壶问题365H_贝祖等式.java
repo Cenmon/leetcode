@@ -23,6 +23,9 @@ public class 水壶问题365H_贝祖等式 {
     public static void main(String[] args) {
         水壶问题365H_贝祖等式 main = new 水壶问题365H_贝祖等式();
 
+        /**
+         * 给定水壶容量a,b，每次只能倒满或清空水壶，返回是否能通过此方式在某个水壶中装容量为z的水
+         */
         System.out.println(main);
     }
 }
