@@ -58,20 +58,8 @@ public class Main {
         List<List<Integer>> list = new ArrayList<>();
 
 
-        int n = 4131564;
-        int p = 95426843;
-        long l = 126060114513456L;
-        Object value = (n-2)*10000000000L;
-        System.out.println("value = " + value);
-        System.out.println(value.getClass());
-        Object value2 = (p + l) / ( n-1 );
-        System.out.println(value2.getClass() + " , value2 = " + value2);
-//        for(int i=11;i<20;i++){
-//            value *= 10;
-//            System.out.println("i = "+ i + " , "+ value);
-//        }
-
-//        System.out.println("value = " + value);
+        int[] idx = new int[256];
+        Arrays.fill(idx,-1);
     }
 
 }
