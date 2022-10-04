@@ -35,6 +35,19 @@ public class 和相同的二元子数组930M {
         return ans;
     }
 
+    public int numSubarraysWithSum2(int[] nums, int goal) { // 固定右端点：未解决
+        int i=0,sum=0,ans=0;
+        for(int j=0,n=nums.length;j<n;j++){
+            sum += nums[j];
+            if(sum > goal) {
+                sum -= nums[i++];
+            }
+            if(sum == goal){
+                ans++;
+            }
+        }
+        return ans;
+    }
 
     public static void main(String[] args) {
         和相同的二元子数组930M main = new 和相同的二元子数组930M();

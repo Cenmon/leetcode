@@ -1,11 +1,11 @@
-package 双指针.窗口指针.滑动窗口.动态窗口;
+package 双指针.窗口指针.滑动窗口.动态窗口.固定右端点;
 
 import java.util.Arrays;
 
 /**
  * @Author Cenmo
  * @Date 2022-10-03 22:11
- * @Description
+ * @Description 固定右端点
  */
 public class 无重复字符的最长子串3M {
 
@@ -28,6 +28,11 @@ public class 无重复字符的最长子串3M {
     public static void main(String[] args) {
         无重复字符的最长子串3M main = new 无重复字符的最长子串3M();
 
-        System.out.println(main);
+        /**
+         * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+         */
+        System.out.println(main.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(main.lengthOfLongestSubstring("bbbbb"));
+        System.out.println(main.lengthOfLongestSubstring("pwwkew"));
     }
 }
