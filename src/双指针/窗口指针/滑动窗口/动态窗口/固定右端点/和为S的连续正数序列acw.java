@@ -1,4 +1,4 @@
-package 双指针.窗口指针.滑动窗口.动态窗口.固定左端点.区间和;
+package 双指针.窗口指针.滑动窗口.动态窗口.固定右端点;
 
 import Utils.ArrayUtils;
 
@@ -56,11 +56,30 @@ public class 和为S的连续正数序列acw {
         return ans.toArray(new int[ans.size()][]);
     }
 
+    public int[][] findContinuousSequence3(int target) { // 滑动窗口，固定右端点
+        int i=1,sum=0;
+        List<int[]> ans = new ArrayList<>();
+        for(int j=1,n=target/2+1;j<=n;j++){
+            sum += j;
+            while(sum >= target){
+                if( sum == target ){
+                    int[] tmp = new int[j-i+1];
+                    for(int k=i;k<=j;k++){
+                        tmp[k-i] = k;
+                    }
+                    ans.add(tmp);
+                }
+                sum -= i++;
+            }
+        }
+        return ans.toArray(new int[0][]);
+    }
+
     public static void main(String[] args) {
         和为S的连续正数序列acw main = new 和为S的连续正数序列acw();
 
 //        JavaUtils.print(main.findContinuousSequence2(15));
-        ArrayUtils.print(main.findContinuousSequence(15)); // [[1,2,3,4,5],[4,5,6],[7,8]]
-        ArrayUtils.print(main.findContinuousSequence(9)); // [[2,3,4],[4,5]]
+        ArrayUtils.print(main.findContinuousSequence3(15)); // [[1,2,3,4,5],[4,5,6],[7,8]]
+        ArrayUtils.print(main.findContinuousSequence3(9)); // [[2,3,4],[4,5]]
     }
 }
