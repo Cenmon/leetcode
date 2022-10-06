@@ -47,19 +47,16 @@ public class Main {
 
         Main main = new Main();
 
-        Set<Integer> set = new HashSet<>();
-
-        Map<Integer,Integer> map = new HashMap<>();
-
-        Queue<Integer> queue = new LinkedList<>();
-
-        Stack<Integer> stack = new Stack<>();
-
-        List<List<Integer>> list = new ArrayList<>();
-
-
-        int[] idx = new int[256];
-        Arrays.fill(idx,-1);
+//        Set<Integer> set = new HashSet<>();
+//
+//        Map<Integer,Integer> map = new HashMap<>();
+//
+//        Queue<Integer> queue = new LinkedList<>();
+//
+//        Stack<Integer> stack = new Stack<>();
+//
+//        List<List<Integer>> list = new ArrayList<>();
+        System.out.println(1^2);
     }
 
 }
