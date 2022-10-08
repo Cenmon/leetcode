@@ -1,4 +1,4 @@
-package 双指针.模拟.扫描区间.合并区间;
+package 双指针.异地指针;
 
 import Utils.ArrayUtils;
 

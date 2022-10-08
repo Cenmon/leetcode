@@ -16,9 +16,7 @@ public class exp数组中的kdiff数对532 {
             int minus = nums[right] - nums[left];
             if(left != right && minus == k){
                 ans++;
-                do{
-                    left++;
-                }while(left<n && nums[left]==nums[left-1]);
+                while (++left<n && nums[left] == nums[left-1]);
             }else if(minus < k){
                 right++;
             }else{

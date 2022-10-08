@@ -36,7 +36,7 @@ public class 插入区间57M_交集 {
     }
 
     public int[][] insert2(int[][] intervals, int[] newInterval) {
-        PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2)->o1[0]-o2[0]);
+        PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2)->o1[0]-o2[0]); // 小顶堆
         for(int[] interval : intervals){
             queue.offer(interval);
         }
