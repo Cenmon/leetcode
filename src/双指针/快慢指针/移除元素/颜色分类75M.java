@@ -6,7 +6,7 @@ import Utils.ArrayUtils;
  * @author Cenmo
  * @Date 2022-06-30 2022-06-30
  */
-public class 颜色分类 {
+public class 颜色分类75M {
 
     public int[] sortColors(int[] nums) { // 对撞指针解法：适用于两种颜色分类
         int left=0,right=nums.length-1;
@@ -46,6 +46,21 @@ public class 颜色分类 {
         return nums;
     }
 
+    private int[] func(int[] nums){
+        int top = -1;
+        for(int i=0,n=nums.length;i<n;i++){
+            if(nums[i] == 0){
+                swap(nums,i,++top); // 入栈
+            }
+        }
+        for(int i=top+1,n=nums.length;i<n;i++){
+            if(nums[i] == 1){
+                swap(nums,i,++top);
+            }
+        }
+        return nums;
+    }
+
     public void swap(int[] nums,int i,int j){
         int tmep = nums[i];
         nums[i] = nums[j];
@@ -53,15 +68,15 @@ public class 颜色分类 {
     }
 
     public static void main(String[] args) {
-        颜色分类 main = new 颜色分类();
+        颜色分类75M main = new 颜色分类75M();
 
         ArrayUtils.print(main.sortColors(new int[] {2,0,2,1,1,0})); // 0,0,1,1,2,2
-        ArrayUtils.print(main.sortColors2(new int[] {2,0,2,1,1,0}));// 0,0,1,1,2,2
-
-        ArrayUtils.print(main.sortColors2(new int[] {2}));// 0,0,1,1,2,2
-        ArrayUtils.print(main.sortColors2(new int[] {2}));// 0,0,1,1,2,2
-
+        ArrayUtils.print(main.sortColors(new int[] {2}));// 0,0,1,1,2,2
         ArrayUtils.print(main.sortColors(new int[] {2,0,1})); // 0,1,2
-        ArrayUtils.print(main.sortColors2(new int[] {2,0,1})); // 0,1,2
+
+        System.out.println();
+        ArrayUtils.print(main.func(new int[] {2,0,2,1,1,0})); // 0,0,1,1,2,2
+        ArrayUtils.print(main.func(new int[] {2}));// 2
+        ArrayUtils.print(main.func(new int[] {2,0,1})); // 0,1,2
     }
 }

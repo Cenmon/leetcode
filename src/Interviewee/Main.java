@@ -47,8 +47,12 @@ public class Main {
 
         Main main = new Main();
 
-//        Set<Integer> set = new HashSet<>();
-//
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(5);
+        set.add(3);
+        for(int num : set)
+            System.out.println(num);
 //        Map<Integer,Integer> map = new HashMap<>();
 //
 //        Queue<Integer> queue = new LinkedList<>();
@@ -56,7 +60,10 @@ public class Main {
 //        Stack<Integer> stack = new Stack<>();
 //
 //        List<List<Integer>> list = new ArrayList<>();
-        System.out.println(1^2);
+//        System.out.println(1^2);
+
+        System.out.println((2>1) == (3>2));
+        System.out.println((0>1) == (1>2));
     }
 
 }
