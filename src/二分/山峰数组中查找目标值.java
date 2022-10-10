@@ -22,7 +22,7 @@ public class 山峰数组中查找目标值 {
 
     public int searchPeak2(int[] arr){
         int low=0,high=arr.length-1;
-        int mid = -1;
+        int mid;
         while(low <= high){
             mid = low + (high-low)/2;
             if(arr[mid] < arr[mid+1]){ //最少两个元素，由于下取整，mid为左边元素，故mid+1不会报错

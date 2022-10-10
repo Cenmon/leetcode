@@ -1,9 +1,11 @@
 package 二分.最左二分;
 
+import java.util.Stack;
+
 /**
  * @Author Cenmo
  * @Date 2022-10-09 19:14
- * @Description
+ * @Description 解空间是[1,max]的离散空间
  */
 public class 爱吃香蕉的珂珂875M {
 
@@ -14,14 +16,15 @@ public class 爱吃香蕉的珂珂875M {
         // 最左二分
         while(left <= right){
             int mid = left + (right-left)/2;
-            if(canEat(piles,mid,h)){
+            if(canEat(piles,mid,h)){ // mid速度能吃完，尝试更小速度
                 right = mid-1;
-            }else{
+            }else{ // mid速度不能吃完，尝试更大速度
                 left = mid+1;
             }// }else{
             //     return mid;
             // }
         }
+        Stack<int[]> stack = new Stack<>();
         return left;
     }
 

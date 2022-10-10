@@ -6,24 +6,26 @@ package 双指针.对撞指针.两数之和;
  */
 public class exp较小的三数之和259 {
 
-    private int ANS = 0;
     public int SmallerThreeSum(int[] nums,int target){
-        int n = nums.length;
-        for(int i=0;i<n;i++){
-            twoSum(nums,i+1,n-1,target-nums[i]);
+        int ans = 0;
+        for(int i=0,n = nums.length;i<n;i++){
+            if(nums[i] * 3 > target) break;
+            ans += twoSum(nums,i+1,n-1,target-nums[i]);
         }
-        return ANS;
+        return ans;
     }
 
-    public void twoSum(int[] nums,int left,int right,int target){ // 两数之和小于特定值的情况总数
+    public int twoSum(int[] nums,int left,int right,int target){ // 两数之和小于特定值的情况总数
+        int ans = 0;
         while(left < right){
             if( nums[left] + nums[right] < target ){
-                ANS += right - left;// 当前sum<target,sum变小时也必定小于target，故总数=right-left
+                ans += right - left;// 当前sum<target,sum变小时也必定小于target，故总数=right-left
                 left++;
             }else{
                 right--;
             }
         }
+        return ans;
     }
 
     public static void main(String[] args) {
@@ -33,5 +35,6 @@ public class exp较小的三数之和259 {
          * 三数之和小于特定值的情况种数
          */
         System.out.println(main.SmallerThreeSum(new int[]{-2,0,1,3},2)); // 2 [[-2,0,1],[-2,0,3]]
+        System.out.println(main.SmallerThreeSum(new int[]{-2,0,-1,3},2)); // 3
     }
 }

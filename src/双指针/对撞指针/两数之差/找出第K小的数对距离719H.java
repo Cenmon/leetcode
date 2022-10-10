@@ -10,40 +10,28 @@ public class 找出第K小的数对距离719H {
      */
     public int smallestDistancePair(int[] nums, int k) {
         Arrays.sort(nums);
-        int n=nums.length,low=0,high=nums[n-1]-nums[0];
-        while (low <= high){
-            int mid = high - (high - low) / 2;
-            
-            // 求nums中小于等于mid的数组对
-            int count = 0;
-            int left=0,right=1;
-            while (left < n && right < n){
-                if( nums[right] - nums[left] <= mid){
-                    count += right - left;
-                    right++;
-                }else{
-                    left++;
-                }
-            }
-//            优化版：避免过多的if条件
-//            while(right < n){
-//                while(nums[right] - nums[left] > mid){
-//                    left++;
-//                }// 小于等于时跳出
-//                count += right - left;
-//                right++;
-//            }
-
-            /**
-             * low == high时的取法
-             */
-            if(count < k){
-                low = mid + 1;
-            }else{ // low=high时，count=k,此时high-1，故取low
-                high = mid - 1;
+        int n=nums.length,left=0,right=nums[n-1]-nums[0];
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+            // 最左二分：距离小于等于mid的个数
+            if(countLessAndEqual(nums,mid) >= k){
+                right = mid - 1;
+            }else{
+                left = mid + 1;
             }
         }
-        return low;
+        return left;
+    }
+    // 找到区间[i,j],nums[j]-nums[i]==dis,则由于数组有序，增大i的同时dis减小，以j结尾的区间差均小于dis
+    private int countLessAndEqual(int[] nums,int dis){
+        int i=0,ans=0;
+        for(int j=0,n=nums.length;j<n;j++){
+            while(nums[j]-nums[i] > dis){
+                i++;
+            }
+            ans += j-i;
+        }
+        return ans;
     }
 
 

@@ -64,6 +64,7 @@ public class Main {
 
         System.out.println((2>1) == (3>2));
         System.out.println((0>1) == (1>2));
+
     }
 
 }
