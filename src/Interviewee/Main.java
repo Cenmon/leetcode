@@ -43,16 +43,26 @@ public class Main {
         return ans.toArray(new int[ans.size()][]);
     }
 
+    private int countGreaterAndEqual(int[] citations,int h){
+        int left=0,right=citations.length-1;
+        // 最左二分
+        while(left <= right){
+            int mid = left + (right-left) / 2;
+            if(citations[mid] >= h){
+                right = mid - 1;
+            }else{
+                left = mid + 1;
+            }
+        }
+        System.out.println("left = " + left);
+        return citations.length - left;
+    }
+
     public static void main(String[] args) {
 
         Main main = new Main();
 
         Set<Integer> set = new HashSet<>();
-        set.add(1);
-        set.add(5);
-        set.add(3);
-        for(int num : set)
-            System.out.println(num);
 //        Map<Integer,Integer> map = new HashMap<>();
 //
 //        Queue<Integer> queue = new LinkedList<>();
@@ -61,10 +71,6 @@ public class Main {
 //
 //        List<List<Integer>> list = new ArrayList<>();
 //        System.out.println(1^2);
-
-        System.out.println((2>1) == (3>2));
-        System.out.println((0>1) == (1>2));
-
     }
 
 }
