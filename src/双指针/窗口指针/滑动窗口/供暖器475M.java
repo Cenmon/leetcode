@@ -1,4 +1,4 @@
-package 双指针.快慢指针.左边or右边;
+package 双指针.窗口指针.滑动窗口;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Cenmo
  * @Date 2022-07-07 2022-07-07
  */
-public class 供暖器475 {
+public class 供暖器475M {
 
     /**
      * 思路：每个房子，要么选择左边的供暖器，要么选择右边的供暖器，最后选择的供暖器应该是距离较小的一侧
@@ -67,8 +67,55 @@ public class 供暖器475 {
         return ans;
     }
 
+    public int findRadius5(int[] houses, int[] heaters) { // 左右扫 + 滑动窗口固定端点
+        Arrays.sort(heaters);
+        Arrays.sort(houses);
+        int m=houses.length,n=heaters.length;
+        int[] right = new int[m];
+        for(int i=0,j=0;i<m;i++){
+            while(j<n && houses[i] > heaters[j]) j++;
+            right[i] = j<n ? heaters[j] - houses[i] : Integer.MAX_VALUE;
+        }
+        int ans = 0;
+        for(int i=m-1,j=n-1;i>=0;i--){
+            while(j>=0 && houses[i] < heaters[j]) j--;
+            int left = j>=0 ? houses[i]-heaters[j] : Integer.MAX_VALUE;
+            ans = Math.max(ans,Math.min(left,right[i]));
+        }
+        return ans;
+    }
+
+    public int findRadius4(int[] houses, int[] heaters) { // 二分
+        Arrays.sort(heaters);
+
+        int ans = 0,radius;
+        for(int house : houses){
+            int idx = leftBSearch(heaters,house);
+
+            if(idx <= 0) radius = heaters[0]-house;
+            else if(idx == heaters.length) radius = house-heaters[idx-1];
+            else radius = Math.min(house-heaters[idx-1],heaters[idx]-house);
+
+            ans = Math.max(ans,radius);
+        }
+        return ans;
+    }
+
+    private int leftBSearch(int[] heaters,int target){
+        int left = 0,right = heaters.length-1;
+        while(left <= right){
+            int mid = left + (right-left)/2;
+            if(heaters[mid] >= target){
+                right = mid - 1;
+            }else{
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+
     public static void main(String[] args) {
-        供暖器475 main = new 供暖器475();
+        供暖器475M main = new 供暖器475M();
 
         /**
          * 给出房子和供暖器的一维坐标位置，求出供暖器能够覆盖所有房子的最小覆盖范围

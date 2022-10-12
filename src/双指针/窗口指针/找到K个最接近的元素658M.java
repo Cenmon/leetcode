@@ -9,7 +9,7 @@ import java.util.List;
  * @author Cenmo
  * @Date 2022-07-10 2022-07-10
  */
-public class 找到K个最接近的元素658 {
+public class 找到K个最接近的元素658M {
 
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         int n = arr.length;
@@ -25,11 +25,12 @@ public class 找到K个最接近的元素658 {
         for(int i=left;i<=right;i++){
             list.add(arr[i]);
         }
+
         return list;
     }
 
     public static void main(String[] args) {
-        找到K个最接近的元素658 main = new 找到K个最接近的元素658();
+        找到K个最接近的元素658M main = new 找到K个最接近的元素658M();
         /**
          * 在给定数组arr中找到k个最接近x的元素
          */
