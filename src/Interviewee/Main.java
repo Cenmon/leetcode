@@ -71,7 +71,7 @@ public class Main {
 //
 //        List<List<Integer>> list = new ArrayList<>();
 //        System.out.println(1^2);
-
+        System.out.println("1e-6 = " + 1e-6);
     }
 
 }

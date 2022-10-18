@@ -1,4 +1,4 @@
-package 双指针.窗口指针;
+package 二分;
 
 import Utils.JavaUtils;
 
@@ -11,11 +11,10 @@ import java.util.List;
  */
 public class 找到K个最接近的元素658M {
 
-    public List<Integer> findClosestElements(int[] arr, int k, int x) {
-        int n = arr.length;
-        int left=0,right=n-1;
+    public List<Integer> findClosestElements(int[] arr, int k, int x) { // 对撞指针
+        int left=0,right=arr.length-1;
         while(right - left + 1 > k){
-            if(Math.abs(arr[right]-x) >= Math.abs(arr[left]-x)){
+            if(arr[right]-x >= x-arr[left]){ // right到x的距离和left到x的距离
                 right--;
             }else{
                 left++;
@@ -25,7 +24,25 @@ public class 找到K个最接近的元素658M {
         for(int i=left;i<=right;i++){
             list.add(arr[i]);
         }
+        return list;
+    }
 
+    public List<Integer> findClosestElements2(int[] arr, int k, int x) { // 二分
+        int left = 0,right = arr.length-k;
+        while (left<right){
+            int mid = left+(right-left)/2;
+
+            if (x - arr[mid] > arr[mid+k] - x){
+                left = mid+1;
+            }else{
+                right = mid;
+            }
+        }
+
+        List<Integer> list = new ArrayList<>();
+        for(int i=left;i< left+k ;i++){
+            list.add(arr[i]);
+        }
         return list;
     }
 
