@@ -1,4 +1,4 @@
-package 前缀和;
+package 前缀和_分布函数;
 
 import java.util.Arrays;
 

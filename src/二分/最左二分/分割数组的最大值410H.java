@@ -29,14 +29,14 @@ public class 分割数组的最大值410H {
 
     private boolean KArraySumSmallThanMid(int[] nums,int k,int value){
         int count = 0,n = nums.length,sum = 0;
-        int i=0,j=0;
+        int i=0;
         while( i < n ){
-            while(j<n && sum+nums[j] <= value){ // 满足子数组和小于等于value
-                sum += nums[j];
-                j++;
+            if(nums[i] > value) i++; // 元素自身自成子数组
+            while(i<n && sum+nums[i] <= value){ // 满足子数组和小于等于value,此处可用窗口来理解，i不动，j往前移
+                sum += nums[i];
+                i++;
             }
             count ++;
-            i = j;
             sum = 0;
         }
         return count <= k;

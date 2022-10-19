@@ -26,16 +26,16 @@ public class 在D天内送达包裹的能力1011H {
     // 贪心运输
     private boolean canConveyPackage(int[] weights,int days,int maxWeight){
         int count=0,sum=0;
-        int i=0,j=0,n=weights.length;
+        int i=0,n=weights.length;
         while(i<n){
-            if(weights[j] > maxWeight) return false;
+            if(weights[i] > maxWeight) return false;
 
-            while(j<n && sum+weights[j] <= maxWeight){
-                sum += weights[j];
-                j++;
+            while(i<n && sum+weights[i] <= maxWeight){ // 此处可用窗口来理解，i不动，j往前移
+                sum += weights[i];
+                i++;
             }
             count++;
-            i = j;
+            // i = j;
             sum = 0;
         }
         return count <= days;
