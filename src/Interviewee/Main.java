@@ -71,7 +71,14 @@ public class Main {
 //
 //        List<List<Integer>> list = new ArrayList<>();
 //        System.out.println(1^2);
-        System.out.println("1e-6 = " + 1e-6);
+        int a=1,b=2;
+        a ^= b ^ (b = a);
+        System.out.println(a + " , " + b);
+
+        int[] arr = new int[]{3,4};
+        arr[0] ^= arr[1] ^ (arr[1] = arr[0]);
+        System.out.println(arr[0] + " , " + arr[1]);
+
     }
 
 }

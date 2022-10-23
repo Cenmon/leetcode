@@ -51,6 +51,7 @@ public class 销售价值减少的颜色球1648H {
         销售价值减少的颜色球1648H main = new 销售价值减少的颜色球1648H();
 
 
+
         System.out.println(main.maxProfit(new int[]{2,5},4));//14
         System.out.println(main.maxProfit(new int[]{3,5},6));//19
         System.out.println(main.maxProfit(new int[]{1,2},1));//2

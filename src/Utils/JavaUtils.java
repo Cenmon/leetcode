@@ -17,4 +17,8 @@ public class JavaUtils {
         nums[j] ^= nums[i];
         nums[i] ^= nums[j];
     }
+
+    public static void swap2(int[] nums,int i,int j){
+        nums[i] ^= nums[j] ^ (nums[j] = nums[i]); // 也可用于字符数组
+    }
 }

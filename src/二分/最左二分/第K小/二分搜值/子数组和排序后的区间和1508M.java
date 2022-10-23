@@ -1,4 +1,4 @@
-package 双指针.对撞指针.第K小.二分搜值;
+package 二分.最左二分.第K小.二分搜值;
 
 public class 子数组和排序后的区间和1508M {
 

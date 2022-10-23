@@ -5,7 +5,7 @@ package 二分.连续区间的二分;
  * @Date 2022-10-13 20:04
  * @Description
  */
-public class 子数组的最大平均值二617H {
+public class 子数组的最大平均值二644H {
 
     // public double maxAverage(int[] nums, int k) { // 超时
     //     // write your code here
@@ -68,7 +68,7 @@ public class 子数组的最大平均值二617H {
 
 
     public static void main(String[] args) {
-        子数组的最大平均值二617H main = new 子数组的最大平均值二617H();
+        子数组的最大平均值二644H main = new 子数组的最大平均值二644H();
 
         /**
          * 给出一个整数数组，有正有负。找到这样一个子数组，他的长度大于等于 k，且平均值最大。
