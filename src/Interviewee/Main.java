@@ -63,16 +63,20 @@ public class Main {
         Main main = new Main();
 
         Set<Integer> set = new HashSet<>();
+
 //        Map<Integer,Integer> map = new HashMap<>();
 //
 //        Queue<Integer> queue = new LinkedList<>();
 //
 //        Stack<Integer> stack = new Stack<>();
 //
-//        List<List<Integer>> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 //        System.out.println(1^2);
-        int[] ints = {1, 2};
-        System.out.println(new StringBuffer());
+//        list.add(0);
+        list.add(1,1);
+        System.out.println(list.toString());
+
+
     }
 
 }
