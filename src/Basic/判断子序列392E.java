@@ -13,7 +13,6 @@ public class 判断子序列392E {
      */
     public boolean isSubsequence(String s, String t) {
         int m=s.length(),n=t.length();
-        if(m > n) return false;
         int i=0,j=0;
         while(i<m && j<n){
             if(s.charAt(i) == t.charAt(j)){
@@ -25,13 +24,13 @@ public class 判断子序列392E {
     }
 
     private boolean isSubsequence_full(String s,String t){
-        int m=s.length(),n=t.length();
-        for(int i=0,j=0;i<m;i++){
-            if(s.charAt(i) == t.charAt(j)){
-                if(++j == n) return true;
+        int m=s.length(),n=t.length(),i=0;
+        for(int j=0;j<n && i<m;j++){
+            if(t.charAt(j) == s.charAt(i)){
+                i++;
             }
         }
-        return false;
+        return i == m;
     }
 
     public static void main(String[] args) {
