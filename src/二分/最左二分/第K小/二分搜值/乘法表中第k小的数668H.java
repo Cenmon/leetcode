@@ -40,7 +40,7 @@ public class 乘法表中第k小的数668H {
 
     private int countLessOrEqual(int m,int n,int value){
         int count = 0;
-        for(int i=1;i<=m;i++){
+        for(int i=1;i<=m;i++){ // 保证m小n大，减小遍历的次数
             count += Math.min(value/i,n); // 利用乘法结果的序列关系
         }
         return count;
