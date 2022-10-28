@@ -73,8 +73,11 @@ public class Main {
         List<Integer> list = new ArrayList<>();
 //        System.out.println(1^2);
 //        list.add(0);
+
         list.add(1,1);
         System.out.println(list.toString());
+
+
 
 
     }

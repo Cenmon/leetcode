@@ -1,6 +1,7 @@
-package 双指针.对撞指针.两数之差;
+package 数据结构.哈希;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * @author Cenmo
@@ -8,19 +9,31 @@ import java.util.Arrays;
  */
 public class exp数组中的kdiff数对532 {
 
-    public int findPairs(int[] nums, int k) { // 两数之差等于特定值：求所有组合，窗口指针
+    public int findPairs(int[] nums, int k) { // 固定右端点
         Arrays.sort(nums);
-        int left=0,right=1,n=nums.length;
-        int ans = 0;
-        while(left < n && right < n){
-            int minus = nums[right] - nums[left];
-            if(left != right && minus == k){
+        int i=0,ans=0;
+        for(int j=0,n=nums.length;j<n;j++){
+            while(i<n && nums[j]-nums[i] > k) i++;
+            if(i<j && nums[j] - nums[i] == k){
                 ans++;
-                while (++left<n && nums[left] == nums[left-1]);
-            }else if(minus < k){
-                right++;
-            }else{
-                left++;
+                while(++i<n && nums[j] - nums[i] == k); // 去重
+            }
+        }
+        return ans;
+    }
+
+    public int findPairs2(int[] nums, int k){ // hashmap
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int num : nums){
+            map.put(num,map.getOrDefault(num,0)+1);
+        }
+        int ans = 0;
+        for(int num : map.keySet()){
+
+            if(num-k != num && map.containsKey(num-k)){
+                ans++;
+            }else if(num-k == num && map.get(num)>1){
+                ans++;
             }
         }
         return ans;
