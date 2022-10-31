@@ -1,5 +1,7 @@
 package Interviewee;
 
+
+
 import java.util.*;
 
 public class Main {
@@ -73,11 +75,8 @@ public class Main {
         List<Integer> list = new ArrayList<>();
 //        System.out.println(1^2);
 //        list.add(0);
-
-        list.add(1,1);
-        System.out.println(list.toString());
-
-
+        double d = 1.5;
+        System.out.println(d-(int)d);
 
 
     }

@@ -1,4 +1,4 @@
-package 双指针.窗口指针.滑动窗口.动态窗口.固定左端点;
+package 数据结构.哈希.前缀和;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,8 +9,8 @@ import java.util.Map;
  * @Description 滑动窗口遍历所有子数组
  */
 public class 和相同的二元子数组930M {
-
-    public int numSubarraysWithSum(int[] nums, int goal) {
+    // 99%内存
+    public int numSubarraysWithSum3(int[] nums, int goal) {
         int n=nums.length,ans = 0;
 
         int[] postZero = new int[n]; // 每个下标右侧的0的个数
@@ -51,8 +51,8 @@ public class 和相同的二元子数组930M {
         }
         return ans;
     }
-
-    public int numSubarraysWithSum3(int[] nums, int goal) { // hashmap + 前缀和
+    // 43%内存
+    public int numSubarraysWithSum(int[] nums, int goal) { // hashmap + 前缀和
         // presum[j]-presum[i] = goal -> presum[j] = presum[i]+goal
         Map<Integer,Integer> map = new HashMap<>();
         int sum = 0,ans = 0;
