@@ -1,4 +1,4 @@
-package 数据结构.哈希.前缀和;
+package 数据结构.哈希.前缀和.区间和;
 
 import java.util.HashMap;
 import java.util.Map;

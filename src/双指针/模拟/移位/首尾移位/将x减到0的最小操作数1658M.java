@@ -1,4 +1,4 @@
-package 数据结构.哈希.前缀和;
+package 双指针.模拟.移位.首尾移位;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,24 @@ import java.util.Map;
  */
 public class 将x减到0的最小操作数1658M {
 
-    public int minOperations(int[] nums, int x) {
+    public int minOperations(int[] nums, int x) { // 滑动数组
+        int total=0;
+        for(int num : nums) total+=num;
+        if(total == x) return nums.length; // 考虑sum=0时，是否满足total-x=sum
+
+        int i=0,sum=0,ans=nums.length;
+        for(int j=0,n=nums.length;j<n;j++){
+            sum += nums[j];
+            // 数组和等于total-x的最长数组长度j-i+1
+            while(i<=j && sum > total-x){
+                sum -= nums[i++];
+            }
+            if(sum == total-x) ans=Math.min(ans,n-(j-i+1));
+        }
+        return ans==nums.length?-1:ans;
+    }
+
+    public int minOperations2(int[] nums, int x) {
         // presum[j]-presum[i] = total-x,最大的j-i
         long total=0;
         for(int num : nums){

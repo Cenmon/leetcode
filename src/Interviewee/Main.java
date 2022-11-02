@@ -64,7 +64,7 @@ public class Main {
 
         Main main = new Main();
 
-        Set<Integer> set = new HashSet<>();
+//        Set<Integer> set = new HashSet<>();
 
 //        Map<Integer,Integer> map = new HashMap<>();
 //
@@ -72,11 +72,11 @@ public class Main {
 //
 //        Stack<Integer> stack = new Stack<>();
 //
-        List<Integer> list = new ArrayList<>();
+//        List<Integer> list = new ArrayList<>();
+
 //        System.out.println(1^2);
 //        list.add(0);
-        double d = 1.5;
-        System.out.println(d-(int)d);
+        System.out.println((1l<<63));
 
 
     }
